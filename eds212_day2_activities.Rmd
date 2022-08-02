@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
 library(tidyverse)
 library(palmerpenguins)
@@ -45,5 +45,24 @@ deriv_3 <- D(ex_3, 't')
 deriv_3
 
 eval(deriv_3)
+```
+
+
+## Section 4: Make a penguin plot
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_jitter(aes(color = species)) +
+  labs(x = "Bill length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin bill length versus bill depth")
+```
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(aes(color = species)) +
+  labs(x = "Species",
+       y = "Flipper length (mm)",
+       title = "Flipper length by species")
 ```
 
