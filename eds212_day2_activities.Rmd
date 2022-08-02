@@ -64,6 +64,10 @@ ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
   labs(x = "Species",
        y = "Flipper length (mm)",
        title = "Flipper length by species") +
-  theme_bw()
+  theme_bw() +
+  theme(panel.grid.minor.x=element_blank(),
+         panel.grid.major.x=element_blank(),  
+         text=element_text(size=10,
+                           family="Times New Roman"))
 ```
 
