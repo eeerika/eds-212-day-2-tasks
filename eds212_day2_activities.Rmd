@@ -1,5 +1,5 @@
 ---
-title: 'Section 3: Derivatives in R'
+title: 'Section 3: Derivatives in R and Section 4: Make a penguin plot'
 author: "Erika"
 date: "2022-08-02"
 output: html_document
@@ -11,3 +11,39 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+## Section 3: Derivatives in R
+
+```{r}
+# f(x)=x^2 at x = 3
+ex_1 <- expression(x ^ 2)
+x <- 3
+
+deriv_1 <- D(ex_1, 'x')
+deriv_1
+
+eval(deriv_1)
+```
+
+```{r}
+# 2 * (3a + 2) ^ 4 − 5 at a = 1.2
+ex_2 <- expression(2 * (3 * a + 2) ^ 4 - 5)
+a <- 1.2
+
+deriv_2 <- D(ex_2, 'a')
+deriv_2
+
+eval(deriv_2)
+```
+
+```{r}
+# -4 * t / (t ^ 2 + 1) ^ 3 at t = 0
+ex_3 <- expression(-4 * t / (t ^ 2 + 1) ^ 3)
+t <- 0
+
+deriv_3 <- D(ex_3, 't')
+deriv_3
+
+eval(deriv_3)
+```
+
